@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FlaskTODO</title>
+  <link rel="stylesheet" href="../static/css/style.css">
+    <style>
+    /* Add this style to position the logout button on the right side */
+    .logout-btn {
+      float: right;
+        background-color: red;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .parameters-btn {
+      float: right;
+        background-color: blue;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+        margin-right: 10px;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>FlaskTODO <a href="{{ url_for('logout') }}"><button class="logout-btn">Logout</button></a>
+    <a href="{{ url_for('profile') }}"><button class="parameters-btn">Profile</button></a></h1>
+    <br>
+    <br>
+    <form method="post" class="todo-form">
+      <div class="input-group">
+        <label for="content">Todo content:</label>
+        <input type="text" name="content" id="content" placeholder="Enter todo content" required>
+      </div>
+      <div class="input-group">
+        <label for="degree">Degree:</label>
+        <div class="radio-group">
+
+
+            <input type="radio" name="degree" value="(Important)" class="demo2 demoyes" id="demo2-a" checked>
+            <label for="demo2-a">Important</label>
+            <input type="radio" name="degree" value="(Unimportant)" class="demo2 demono" id="demo2-b" >
+            <label for="demo2-b">Unimportant</label>
+
+        </div>
+      </div>
+          <div>
+                <label for="todo-date">To do before :</label>
+                <input id="date" name="date" required type="date" min="{{ current_date }}" value="{{ current_date }}">
+
+            </div>
+
+
+      <button type="submit">Add Todo</button>
+    </form>
+
+    <div class="todo-list">
+
+      {% for todo in todos|sort(attribute='degree')|sort(attribute='date') %}
+          {% if todo['days_left'] < 0 %}
+              {% set past_tasks = past_tasks + [todo] %}
+
+
+
+          {% else %}
+        <div class="todo-item">
+          <div class="todo-content">
+            <p>{{ todo['content'] }}</p>
+          </div>
+          <div class="todo-details">
+            <div class="todo-degree">
+              <p class="{{ todo['degree'] }}"><em>{{ todo['degree'] }}</em></p>
+            </div>
+
+          </div>
+            <p class="todo-date">
+                {% if todo['days_left'] <= 1 %}
+                    <em>Due to: </em>{{ todo['date']+" "}}<p class="blinking-red">({{ todo['days_left'] }} days left)</p>
+                {% else %}
+                    <em>Due to: </em>{{ todo['date']+" "}}<em>({{ todo['days_left'] }} days left)</em>
+                {% endif %}
+            </p>
+          <div class="todo-actions">
+
+              <a href="{{ url_for('edit', id=todo['_id']) }}"><button>Edit</button></a>
+
+
+
+              <form method="POST" action="{{ url_for('delete', id=todo['_id']) }}">
+                <button type="submit">Delete</button>
+            </form>
+
+          </div>
+        </div>
+          {% endif %}
+      {% endfor %}
+
+    {% if past_tasks %}
+    <hr>
+        <br>
+    <h2>Past tasks</h2>
+    <br>
+        {% for todo in past_tasks %}
+        <div class="past_task">
+        <div class="past_todo-item">
+          <div class="past_todo-content">
+            <p>{{ todo['content'] }}</p>
+          </div>
+          <div class="past_todo-details">
+            <div class="past_todo-degree">
+              <p class="{{ todo['degree'] }}"><em>{{ todo['degree'] }}</em></p>
+            </div>
+
+          </div>
+            <p class="past_todo-date">
+                    <em>Due to: </em>{{ todo['date']+" "}}(Past)</p>
+            </p>
+          <div class="past_todo-actions">
+
+              <a href="{{ url_for('edit', id=todo['_id']) }}"><button>Edit</button></a>
+
+              <form method="POST" action="{{ url_for('delete', id=todo['_id']) }}">
+                <button type="submit">Delete</button>
+            </form>
+
+          </div>
+        </div>
+</div>
+
+      {% endfor %}
+    {% endif %}
+
+    </div>
+  </div>
+
+
+
+
+</body>
+</html>
+

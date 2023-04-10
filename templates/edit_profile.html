@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Profile</title>
+  <link rel="stylesheet" href="../static/css/style-2.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Edit Profile</h1>
+    <form method="post">
+      <label for="name">Name:</label>
+      <input type="text" name="name" value="{{ user.name }}" required>
+      <br><br>
+      <label for="password">Password:</label>
+      <input type="password" name="password" required>
+      <br><br>
+      <input type="submit" value="Save Changes">
+    </form>
+    <br>
+    <a href="../"><button class="back-btn">Back</button></a>
+  </div>
+</body>
+</html>

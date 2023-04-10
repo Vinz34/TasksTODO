@@ -1,0 +1,196 @@
+/* Reset default browser styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set default font family and size */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+/* Set container styles */
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Set form styles */
+.todo-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.todo-form .input-group {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+
+.todo-form .input-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.todo-form .radio-group {
+  display: flex;
+}
+
+.todo-form .radio-group label {
+  margin-right: 10px;
+}
+
+.todo-form button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
+
+input[type="radio"].demo2 {
+  display: none;
+}
+input[type="radio"].demo2 + label {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  border-radius: 0.3rem;
+  color: #fff;
+  background-color: #6c757d;
+  border: 1px solid transparent;
+  transition: all 0.5s ease-in-out;
+}
+input[type="radio"].demo2.demoyes:hover + label {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+input[type="radio"].demo2.demoyes:checked + label {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+input[type="radio"].demo2.demono:hover + label {
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+input[type="radio"].demo2.demono:checked + label {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.todo-content {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.todo-details {
+  display: flex;
+  align-items: center;
+}
+
+.todo-degree {
+  margin-right: 50px;
+}
+
+.todo-date {
+  margin-right: 1px;
+}
+
+.todo-actions {
+  display: inline-block;
+  display: flex;
+  margin-left: 200px;
+}
+.todo-actions button:first-child {
+  margin-right: 5px;
+}
+
+.todo-actions button:last-child {
+  margin-left: 5px;
+}
+
+.todo-degree, .todo-date {
+  display: inline-block;
+  margin-left: 200px;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.blinking-red {
+  margin-left: 5px;
+  color: red;
+  animation: blink 1s linear infinite;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.past_task {
+
+    color: grey;
+    font-style: italic;
+}
+
+.past_todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.past_todo-content {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.past_todo-actions {
+  display: inline-block;
+  display: flex;
+  margin-left: 200px;
+}
+
+.past_todo-actions button:first-child {
+  margin-right: 5px;
+}
+
+.past_todo-actions button:last-child {
+  margin-left: 5px;
+}
+
+.past_todo-details {
+  display: flex;
+  align-items: center;
+}
+
+.past_todo-degree {
+  margin-right: 50px;
+}
+
+.past_todo-date {
+  margin-right: 1px;
+}
+
+.past_todo-degree, .past_todo-date {
+  display: inline-block;
+  margin-left: 200px;
+}

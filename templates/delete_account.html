@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Delete Account</title>
+  <link rel="stylesheet" href="../static/css/style-2.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Delete Account</h1>
+    <p>Are you sure you want to delete your account?</p>
+    <form method="post">
+      <input type="submit" name="confirm" value="Yes, I'm sure">
+    </form>
+    <br>
+    <a href="{{ url_for('index') }}">Cancel</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F0F2F5;
+        }
+
+        .container {
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 400px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #336699;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 10px;
+        }
+
+        input[type=text], input[type=password] {
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: none;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type=submit] {
+            background-color: #336699;
+            color: #FFFFFF;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type=submit]:hover {
+            background-color: #264d73;
+        }
+
+        button {
+            background-color: #FFFFFF;
+            color: #336699;
+            border: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        button:hover {
+            color: #264d73;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% if error %}
+            <p>{{ error }}</p>
+        {% endif %}
+        <h1>Login</h1>
+        <form method="POST" action="{{ url_for('login') }}">
+            <label>Username:</label>
+            <input type="text" name="username"><br><br>
+            <label>Password:</label>
+            <input type="password" name="password"><br><br>
+            <input type="submit" value="Submit">
+        </form>
+        <br>
+        <a href="../register"><button>No account yet?</button></a>
+    </div>
+</body>
+</html>
