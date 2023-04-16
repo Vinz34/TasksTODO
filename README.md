@@ -38,6 +38,9 @@ The application displays a countdown timer that calculates the number of days re
 
 The application also features a login system where users can create an account and log in to manage their tasks. Users can edit their profile information, including their name and password, or even delete their account.
 
+![image](https://user-images.githubusercontent.com/97039821/232321838-5697e84c-e01d-45da-a692-08ac319f243f.png)
+
+
 
 
 ## Conclusion
