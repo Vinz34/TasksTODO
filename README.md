@@ -8,11 +8,15 @@ This is a Flask application for managing tasks with a login system. With this ap
 
 To create a new task, you will be taken to a form where you can enter the details of the task, including the task name, whether it is important or not, and the due date. Once you have entered all the details, click the "Add Todo" button to add the task to the list.
 
+![image](https://user-images.githubusercontent.com/97039821/232321989-82ce9427-110b-4cc0-a08c-d6204c175c39.png)
+
 
 
 ## Editing Tasks
 
 To edit an existing task, click on the "Edit" button next to the task you want to modify. You will be taken to a form where you can edit the task details. Once you have made your changes, click the "Save" button to update the task.
+
+![image](https://user-images.githubusercontent.com/97039821/232322011-9c67445b-d0c8-41ee-bac5-77866a507a60.png)
 
 
 
@@ -26,11 +30,17 @@ To delete a task, click on the "Delete" button next to the task you want to remo
 
 Past tasks are displayed at the bottom of the homepage in gray color. When you come back to the site, you will be able to see that the old tasks are passed, because it updates in real-time.
 
+![image](https://user-images.githubusercontent.com/97039821/232322082-fcc986ab-b031-41e7-a17c-8ed5c8baed79.png)
+
+
 
 
 ## Countdown Timer
 
 The application displays a countdown timer that calculates the number of days remaining until the due date of the task. If there is less than 1 day remaining, the timer is displayed in red color and blinks to grab the user's attention.
+
+![image](https://user-images.githubusercontent.com/97039821/232322073-045730ae-aef6-42aa-ac75-8ff491620f64.png)
+
 
 
 
